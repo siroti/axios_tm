@@ -4,22 +4,50 @@ const headersEl = document.getElementById('headers');
 const configEl = document.getElementById('config');
 
 const get = () => {
+    const config = {
+        params: {
+            _limit: 2
+        }
+    };
+    axios.get('https://jsonplaceholder.typicode.com/posts',config)
+    .then((response) => renderOutput(response))
     console.log('get');
 }
 
 const post = () => {
+    const data = {
+        title: 'Eduardo',
+        body: 'bar',
+        userId: 1,
+    };
+    axios.post('https://jsonplaceholder.typicode.com/posts', data)
+    .then((response) => renderOutput(response))
     console.log('post');
 }
 
 const put = () => {
+    const data = {
+        title: 'Eduardo',
+        body: 'bar',
+        userId: 1,
+    };
+    axios.put('https://jsonplaceholder.typicode.com/posts/1', data)
+    .then((response) => renderOutput(response))
     console.log('put');
 }
 
 const patch = () => {
+    const data = {
+        body: 'Eduardo',
+    };
+    axios.patch('https://jsonplaceholder.typicode.com/posts/1', data)
+    .then((response) => renderOutput(response))
     console.log('patch');
 }
 
 const del = () => {
+    axios.delete('https://jsonplaceholder.typicode.com/posts/2', data)
+    .then((response) => renderOutput(response))
     console.log('delete');
 }
 
